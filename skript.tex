@@ -1,28 +1,33 @@
-\documentclass[12pt]{scrartcl}%{article} % Beginn der LaTeX-Datei
-\usepackage{amsmath,amssymb,amsthm}  % erleichtert Mathe 
-\addtolength{\jot}{0.2em}
-\usepackage{enumitem}% schicke Nummerierung
-\newcommand{\sbt}{\,\begin{picture}(-1,1)(-1,-3)\circle*{3}\end{picture}\ }
-\renewcommand{\labelitemi}{\sbt}
+\documentclass[fleqn, 12pt]{scrartcl}
 
-\usepackage{graphicx} % für Grafik-Einbindung
-\usepackage{float} 
+% Math!
+\usepackage{mathtools, amssymb, amsthm}
+%\addtolength{\jot}{0.2em}
+
+% Graphics!
+%\usepackage{graphicx}
+%\usepackage{float}
 %\usepackage[dvips]{hyperref}
+%\renewcommand\labelenumi{(\arabic{enumi})}
 
+% Deutsch!
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
-\usepackage[autostyle=true,german=quotes]{csquotes}
-%\usepackage[T1]{fontenc}
-%\usepackage{lmodern}
-% Einstellungen, wenn man deutsch schreiben will, z.B. Trennregeln
-\usepackage[utf8]{inputenc}  % für Unix-Systeme
+%\usepackage[autostyle=true, german=quotes]{csquotes}
+\usepackage{icomma}
+\DeclareUnicodeCharacter{201C}{\quotedblbase} % you could write \glqq if you use the babel package
+\DeclareUnicodeCharacter{201D}{\textquotedblleft} % you could write \grqq if you use the babel package
 
 % environments
 \newtheorem{thm}{Theorem}
 \newtheorem{lemma}{Lemma}
+
 % definition-like stuff
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
 \newtheorem{ex}{Beispiel}
+
 % remark-like stuff
 \theoremstyle{remark}
 \newtheorem*{notation}{Notation}
@@ -30,7 +35,6 @@
 
 % commands
 \newcommand{\powerset}{\mathcal{P}}
-\newcommand{\implies}{\Rightarrow}
 \newcommand{\sym}{\text{Sym}}
 \newcommand{\gl}{\text{GL}}
 \newcommand{\abb}{\text{Abb}}
@@ -64,14 +68,14 @@
 \end{ex}
 
 \begin{lemma}
-    \begin{enumerate}[label=\alph*)]
+    \begin{enumerate}
         \item Das neutrale Element ist eindeutig.
         \item Inverse Elemente sind eindeutig.
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-    \begin{enumerate}[label=\alph*)]
+    \begin{enumerate}
         \item Seien $e,f$ neutrale Elemente, dann gilt $e=ef=f$.
         \item Sei $a\in G$ und $b,b'\in G$ inverse Elemente. Dann gilt $b'=b'e=b'(ab)=(b'a)b=eb=b$. 
     \end{enumerate}
@@ -132,7 +136,7 @@
 
     Äquivalent dazu:
 
-    \begin{enumerate}[label=(\roman*)]
+    \begin{enumerate}
         \item Für $a,b\in H$ gilt $ab\in H$ (Abgeschlossenheit)
         \item $e\in H$
         \item für $a\in H$ ist $\Inv a \in H$
@@ -156,7 +160,7 @@
 \end{proof}
 
 \begin{ex}
-    \begin{enumerate}[label=(\alph*)]
+    \begin{enumerate}
         \item $\{e\}, G$ induziert Untergruppe für alle Gruppen $(G,\cdot)$.
         \item $K$ Körper. $\text{SL}_n(K)=\{A\in M_n(K): \det(A)=1\}$ induziert Untergruppe von $\gl_n(K)$, die spezielle lineare Gruppe.
     \end{enumerate}
